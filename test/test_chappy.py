@@ -4,7 +4,7 @@ import unittest
 from gdo.base.Application import Application
 from gdo.base.ModuleLoader import ModuleLoader
 from gdo.base.Util import module_enabled, Random
-from gdo.chappy import module_chappy
+from gdo.chappy.module_chappy import module_chappy
 from gdotest.TestUtil import reinstall_module, install_module, cli_plug, cli_gizmore
 
 
@@ -29,8 +29,11 @@ class ChappyTest(unittest.TestCase):
         self.assertTrue(module_enabled('chappy'), 'Cannot re-install chappy.')
 
     def test_01_chappy_start(self):
-        cli_plug(None, '$chappy.start')
-        cli_plug(None, '$chappy.reset')
+        out = cli_plug(None, '$chappy.start')
+        self.assertIn('You are now playing Chappy!', out, 'Cannot start chappy.')
+        print(out)
+        out = cli_plug(None, '$cpr')
+        print(out)
         chappy = module_chappy.instance().get_chappy(cli_gizmore())
         self.assertIsNotNone(chappy, 'cannot reset a chappy.')
 

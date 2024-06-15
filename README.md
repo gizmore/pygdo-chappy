@@ -34,18 +34,18 @@ Planned are:
 
 Bot commands start with `$`. Chappy commands start with `$cp`, except `$chappy.start`.
 
-Your first command should be `$cpy.start`
+Your first command should be `$chappy.start`
 This will prepare your chappy genome.
-Then issue `$cpy.reset` to get you a freshly breded chappy and start an adventure.
+Then issue `$cpr` to reset the game and get you a freshly breded chappy.
 
-Those Chappies from reset are at max 50% of a genome.
+Those Chappies from reset are at max 50% power for a genome.
 
-To get better chappies you need to `$cpy.evolve` or `$cpy.breed`.
+To get better chappies you need to `$cpe` (evolve) or `$cpb` (breed).
 
 Breeding and Evolve costs life.
-Fighting gains and loses life as well.
+Fighting wins and loses you life points.
 
-You gain life by feeding and playing with your chappy, or by fighting others.
+You also get more lives by feeding and playing with your chappy.
 
 You can fight a random chappy, or choose a target yourself.
 If you fight a chappy twice within 1 hour you lose a life.
