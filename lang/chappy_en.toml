@@ -6,13 +6,14 @@ module_chappy = "Chappy"
 mt_chappy_poem = "Gizmore's AI Poem"
 md_chappy_poem = "A little poem, gizmore has written, with and about AI, which took only 1 minute."
 
+
 #########
 # Start #
 #########
 mt_chappy_start = "Start Chappy"
 md_chappy_start = "Enable the chappy MMORPG for your account. You need $cpy.reset afterwards!"
 msg_chappy_started = "You are now playing Chappy! Genome Number %s. Type $cpy.reset to start an adventure.Now try $cpy.stats, $cpy.fight, $cpy.evolve or $cpy.breed. *BUT* You need $cpy.reset now to start a new game!"
-err_chappy_already_started = "You are already playing Chappy, genome number %s."
+err_chappy_already_started = "You are already playing Chappy! Genome Number %s."
 
 #########
 # Reset #
@@ -20,7 +21,8 @@ err_chappy_already_started = "You are already playing Chappy, genome number %s."
 mt_chappy_reset = "Start Game"
 md_chappy_reset = "Create your personal Chappy. You need to $cpy.start first to get a genome number. This will reset your chatgpt genomes and everything from the current chappy game."
 err_chappy_game_not_started = "You have not issued chappy.start yet. This will enable the game for your chat account and assign you a random genome number."
-msg_chappy_reset = "A new chappy adventure has been started with genome number %s. Now try $cps, $cpy.fight, $cpy.evolve or $cpy.breed - greetz giz!"
+msg_chappy_reset = "A new chappy adventure has been started with genome number %s. You can now $cps (status), $cpf (fight), $cpe (evolve) or $cpb (breed)."
+
 
 #########
 # Stats #
@@ -32,6 +34,15 @@ chappy_stats_1 = "It is %s old, has %s %scm long headhair, %s eyes and %s %s win
 chappy_stats_2 = "It looks %s, %s, %s and %s." # quickness, strength, charisma and intelligence.
 chappy_stats_3 = "Attributes: %s."
 chappy_stats_4 = "PIC: %s"
+
+
+################
+# Global Stats #
+################
+mt_chappy_global_stats = "Chappy Game Stats"
+md_chappy_global_stats = "Global Chappy Statistics."
+msg_chappy_global_stats = "There have been %s fights in total. There are %s chappies, %s active and %s idle. Number of current visible players: %s."
+
 
 ##############
 # Attributes #
@@ -75,6 +86,7 @@ chappy_eagle = "Majestic birds of prey with powerful beaks and keen eyesight."
 chappy_hawk = "Birds of prey known for their sharp vision and hunting prowess."
 chappy_heron = "Long-legged wading birds found near water bodies, known for their patient hunting."
 chappy_peacock = "Colorful birds with extravagant plumage, known for their distinctive tail feathers."
+
 
 ###############
 # GENE_Ethnic #

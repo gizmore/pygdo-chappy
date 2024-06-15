@@ -1,3 +1,4 @@
+from gdo.base.Util import Random
 from gdo.chappy.GENE import GENE
 from gdo.core.GDT_Float import GDT_Float
 
@@ -12,6 +13,7 @@ class GENE_HairLength(GDT_Float, GENE):
         self.min(0.0)
         self.max(20.0)
 
-    def gdo_apply_genome(self):
-        pass
+    def gdo_chappy_start(self):
+        chappy = self.get_chappy()
+        chappy.column('gene_hair_len').val(Random.mrandf(0, 10.0))
 

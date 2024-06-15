@@ -1,10 +1,10 @@
 from gdo.base.GDO_Module import GDO_Module
 from gdo.base.GDT import GDT
 from gdo.chappy.GDO_Chappy import GDO_Chappy
+from gdo.chappy.GDO_ChappyFight import GDO_ChappyFight
 from gdo.chappy.GDT_Chappy import GDT_Chappy
 from gdo.core.GDO_User import GDO_User
 from gdo.core.GDT_UInt import GDT_UInt
-from gdo.core.GDT_User import GDT_User
 
 
 class module_chappy(GDO_Module):
@@ -12,6 +12,7 @@ class module_chappy(GDO_Module):
     def gdo_classes(self):
         return [
             GDO_Chappy,
+            GDO_ChappyFight,
         ]
 
     def gdo_dependencies(self) -> list:
@@ -20,6 +21,7 @@ class module_chappy(GDO_Module):
             'avatar',
             'blackjack',
             'chatgpt',
+            'slapwarz',
         ]
 
     def gdo_user_config(self) -> list[GDT]:

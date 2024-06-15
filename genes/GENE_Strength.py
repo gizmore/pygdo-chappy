@@ -12,3 +12,4 @@ class GENE_Strength(GENE_FloatEnum):
             'strong': 'strong',
             'mighty': 'mighty',
         }
+

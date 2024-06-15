@@ -1,3 +1,4 @@
+from gdo.base.Util import Random
 from gdo.chappy.GENE import GENE
 from gdo.core.GDT_Enum import GDT_Enum
 from gdo.core.GDT_Float import GDT_Float
@@ -12,11 +13,26 @@ class GENE_FloatEnum(WithProxy, GDT_Float, GENE):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.proxy(GDT_Enum(f"{name}_enum").choices(self.gdo_choices()))
+        self.proxy(GDT_Enum(f"{name}").choices(self.gdo_choices()))
 
     def val(self, val: str | list):
+        if not val:
+            val = 0
         self.val_float_to_enum(float(val), self._proxy)
         return super().val(val)
 
+    def enum_val(self) -> str:
+        return self._proxy.get_val()
+
     def gdo_choices(self) -> dict:
         return {}
+
+    def gdo_column_define(self) -> str:
+        return GDT_Float.gdo_column_define(self)
+
+    ###########
+    # Compute #
+    ###########
+    def gdo_chappy_start(self):
+        self.get_chappy().set_val(self.get_name(), Random.mrandf(0, 0.5))
+

@@ -14,3 +14,7 @@ class GENE_Size(GENE_FloatEnum):
             'large': 'very large',
             'huge': 'huge',
         }
+
+    def gdo_chappy_apply(self):
+        chappy = self.get_chappy()
+        chappy.inc_attr('c_strength', self.get_value() * 10.0)

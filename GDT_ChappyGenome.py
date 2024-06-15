@@ -16,9 +16,10 @@ from gdo.chappy.genes.GENE_Size import GENE_Size
 from gdo.chappy.genes.GENE_Strength import GENE_Strength
 from gdo.chappy.genes.GENE_WingSize import GENE_WingSize
 from gdo.core.GDT_Composite import GDT_Composite
+from gdo.core.WithGDO import WithGDO
 
 
-class GDT_ChappyGenome(GDT_Composite):
+class GDT_ChappyGenome(WithGDO, GDT_Composite):
     """
     All chappy genes in one composite.
     """
@@ -42,3 +43,12 @@ class GDT_ChappyGenome(GDT_Composite):
             GENE_Brightness('gene_skin'),
             GENE_HairLength('gene_hair_len'),
         ]
+
+    #########
+    # Reset #
+    #########
+    def initialize_reset_chappy(self):
+        for gdt in self.gdo_components():
+            gdt.gdo(self._gdo)
+            gdt.gdo_
+        pass

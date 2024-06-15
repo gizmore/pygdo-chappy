@@ -1,11 +1,14 @@
+import colorsys
+
+from gdo.base.Util import Random
 from gdo.chappy.GENE import GENE
 from gdo.core.GDT_UInt import GDT_UInt
 
 
 class GENE_Color(GDT_UInt, GENE):
     """
-    Hair Color of your chappy. Uses HSV for smooth genetics.
-    Greenish hair gives most attack.
+    Color your chappy. Uses HLS for smooth genetics.
+    Uses RGB to enhance stats.
     """
 
     def __init__(self, name: str):
@@ -15,7 +18,16 @@ class GENE_Color(GDT_UInt, GENE):
         self.bytes(1)
 
     def get_rgb(self) -> tuple:
-        return (0, 0, 0)
+        rf, gf, bf = colorsys.hls_to_rgb(self.get_value() / 255, 0.5, 0.75)
+        return round(rf * 255), round(gf * 255), round(bf * 255)
 
-    def gdo_apply_gene(self):
-        rgb = self.get_rgb()
+    def gdo_chappy_start(self):
+        chappy = self.get_chappy()
+        chappy.column(self.get_name()).val(Random.mrand(0, 255))
+
+    def gdo_chappy_apply(self):
+        chappy = self.get_chappy()
+        r, g, b = self.get_rgb()
+        chappy.inc_attr('c_fire', r)
+        chappy.inc_attr('c_earth', g)
+        chappy.inc_attr('c_water', b)

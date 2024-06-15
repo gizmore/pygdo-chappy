@@ -1,24 +1,65 @@
+from typing_extensions import TYPE_CHECKING
+
+import math
+
+if TYPE_CHECKING:
+    from gdo.chappy.GDO_ChappyFight import GDO_ChappyFight
+
+
+from gdo.base.Util import Random
 from gdo.chappy.GDO_Chappy import GDO_Chappy
 from gdo.chappy.GDT_Element import GDT_Element
 
 
-class Outcome:
+class FightOutcome:
     _attacker: GDO_Chappy
     _defender: GDO_Chappy
     _atk1: int
     _atk2: int
     _life: int
 
-    def __init__(self, attacker, defender, atk1, atk2, life):
+    def __init__(self, attacker, defender, atk1, atk2):
         self._attacker = attacker
         self._defender = defender
         self._atk1 = atk1
         self._atk2 = atk2
-        self._life = life
+        self._life = self.get_lives()
+
+    def get_lives(self) -> int:
+        atk1 = math.floor(math.log10(self._atk1) * 5.0 + 1)
+        atk2 = math.floor(math.log10(self._atk2) * 5.0 + 1)
+        return atk1 - atk2
+
 
 class Combat:
 
     @classmethod
-    def fight(cls, attacker: GDO_Chappy, defender: GDO_Chappy, element: GDT_Element):
+    def fight(cls, fight: 'GDO_ChappyFight'):
+        attacker = fight.get_attacker()
+        defender = fight.get_defender()
+        element = fight.get_element()
+        seed = fight.get_seed()
+        with Random(seed):
+            # Base attacker (always)
+            atk1 = Random.mrand(0, attacker.gdo_value('c_attack'))
+            atk1 += Random.mrand(0, attacker.gdo_value('c_strength') * 3.0)
+            atk1 += Random.mrand(0, attacker.gdo_value('c_quickness') * 1.5)
+            atk1 += Random.mrand(0, attacker.gdo_value('c_intelligence') * 2.0)
+            # Base defender (always)
+            atk2 = Random.mrand(0, attacker.gdo_value('c_defense'))
+            atk2 += Random.mrand(0, attacker.gdo_value('c_strength') * 1.5)
+            atk2 += Random.mrand(0, attacker.gdo_value('c_quickness') * 3.0)
+            atk2 += Random.mrand(0, attacker.gdo_value('c_intelligence') * 2.0)
+            # Elemental
+            match element:
+                case GDT_Element.FIRE:
+                    atk1 += Random.mrand(0, attacker.gdo_value('c_fire'))
+                    atk2 += Random.mrand(0, defender.gdo_value('c_earth'))
+                case GDT_Element.EARTH:
+                    atk1 += Random.mrand(0, attacker.gdo_value('c_earth'))
+                    atk2 += Random.mrand(0, defender.gdo_value('c_water'))
+                case GDT_Element.WATER:
+                    atk1 += Random.mrand(0, attacker.gdo_value('c_water'))
+                    atk2 += Random.mrand(0, defender.gdo_value('c_fire'))
 
-        pass
+        return FightOutcome(attacker, defender, atk1, atk2)

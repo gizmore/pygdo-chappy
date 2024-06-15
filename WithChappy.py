@@ -7,9 +7,10 @@ from gdo.core.WithGDO import WithGDO
 if TYPE_CHECKING:
     from gdo.chappy.GDO_Chappy import GDO_Chappy
 
+
 class WithChappy(WithGDO):
 
-    def get_chappy(self) -> 'GDO_Chappy':
+    def get_chappy(self) -> GDO_Chappy:
         """
         Get the GDO_Chappy in-game avatar.
         """
@@ -20,4 +21,3 @@ class WithChappy(WithGDO):
 
     def get_chappy_user(self) -> GDO_User:
         return self.get_chappy().get_chappy_user()
-

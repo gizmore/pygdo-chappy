@@ -1,4 +1,3 @@
-from gdo.base.Logger import Logger
 from gdo.chappy.WithChappy import WithChappy
 from gdo.core.GDT_Enum import GDT_Enum
 from gdo.core.GDT_Field import GDT_Field
@@ -13,19 +12,19 @@ class GENE(WithChappy, GDT_Field):
     # Abstract #
     ############
     def gdo_chappy_start(self):
-        Logger.error("STUB")
+        pass
 
     def gdo_chappy_evolve(self):
-        Logger.error("STUB")
+        pass
 
     def gdo_chappy_apply(self):
-        Logger.error("STUB")
+        pass
 
     ##########
     # Helper #
     ##########
     def val_float_to_enum(self, val: float, enum: GDT_Enum):
-        choices = enum.init_choices()
+        choices = list(enum.init_choices().values())
         choice = choices[int(val * len(choices))]
         enum.val(choice)
 
