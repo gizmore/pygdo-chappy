@@ -15,5 +15,4 @@ class GENE_HairLength(GDT_Float, GENE):
 
     def gdo_chappy_start(self):
         chappy = self.get_chappy()
-        chappy.column('gene_hair_len').val(Random.mrandf(0, 10.0))
-
+        chappy.set_val(self.get_name(), Random.mrandf(0, 10.0))

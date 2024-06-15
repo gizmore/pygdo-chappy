@@ -10,17 +10,23 @@ class GDT_Chappy(GDT_ObjectSelect):
     Get a chappy.
     """
     _own: bool
+    # _dead: bool
     _random: bool
 
     def __init__(self, name):
         super().__init__(name)
         self._own = False
+        # self._dead = False
         self._random = False
         self.table(GDO_Chappy.table())
 
     ###########
     # Options #
     ###########
+    # def dead(self, dead: bool = True):
+    #     self._dead = dead
+    #     return self
+
     def default_own(self, own: bool = True):
         self._own = own
         return self

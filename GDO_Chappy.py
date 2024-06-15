@@ -73,6 +73,7 @@ class GDO_Chappy(GDO):
             GDT_User('c_owner').not_null().cascade_delete(),
             GDT_User('c_device').cascade_delete(),
             GDT_Bool('c_active').not_null().initial('0'),
+            GDT_Bool('c_dead').not_null().initial('0'),
             # real
             ATTR_Level('c_level'),
             ATTR_Age('c_age'),
@@ -108,6 +109,7 @@ class GDO_Chappy(GDO):
 
     def deactivate(self):
         self.save_val('c_active', '0')
+        self.delete()
         return self
 
     def is_male(self) -> bool:

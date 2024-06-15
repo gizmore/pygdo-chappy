@@ -26,22 +26,22 @@ class GDT_ChappyGenome(WithGDO, GDT_Composite):
 
     def gdo_components(self) -> list[GDT]:
         return [
-            GENE_Gender('gene_gender'),
-            GENE_Race('gene_race'),
-            GENE_Ethnic('gene_eth1'),
+            GENE_Gender('gene_gender').not_null(),
+            GENE_Race('gene_race').not_null(),
+            GENE_Ethnic('gene_eth1').not_null(),
             GENE_Ethnic('gene_eth2'),
             GENE_Ethnic('gene_eth3'),
-            GENE_Size('gene_size'),
-            GENE_WingSize('gene_wing_size'),
-            GENE_Strength('gene_str'),
-            GENE_Quickness('gene_qui'),
-            GENE_Intelligence('gene_int'),
-            GENE_Charisma('gene_cha'),
-            GENE_FeatherColor('gene_feather_color'),
-            GENE_HairColor('gene_hair'),
-            GENE_EyeColor('gene_eyes'),
-            GENE_Brightness('gene_skin'),
-            GENE_HairLength('gene_hair_len'),
+            GENE_Size('gene_size').not_null(),
+            GENE_WingSize('gene_wing_size').not_null(),
+            GENE_Strength('gene_str').not_null(),
+            GENE_Quickness('gene_qui').not_null(),
+            GENE_Intelligence('gene_int').not_null(),
+            GENE_Charisma('gene_cha').not_null(),
+            GENE_FeatherColor('gene_feather_color').not_null(),
+            GENE_HairColor('gene_hair').not_null(),
+            GENE_EyeColor('gene_eyes').not_null(),
+            GENE_Brightness('gene_skin').not_null(),
+            GENE_HairLength('gene_hair_len').not_null(),
         ]
 
     #########

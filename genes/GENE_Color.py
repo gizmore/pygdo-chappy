@@ -23,7 +23,7 @@ class GENE_Color(GDT_UInt, GENE):
 
     def gdo_chappy_start(self):
         chappy = self.get_chappy()
-        chappy.column(self.get_name()).val(Random.mrand(0, 255))
+        chappy.set_val(self.get_name(), Random.mrand(0, 255))
 
     def gdo_chappy_apply(self):
         chappy = self.get_chappy()
