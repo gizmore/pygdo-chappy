@@ -20,6 +20,9 @@ class GENE(WithChappy, GDT_Field):
     def gdo_chappy_apply(self):
         pass
 
+    def gdo_chappy_genome_text(self):
+        pass
+
     ##########
     # Helper #
     ##########

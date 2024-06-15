@@ -97,6 +97,9 @@ class GDO_Chappy(GDO):
             GDT_ChappyGenome(),
         ]
 
+    def get_chappy_name(self):
+        return self.gdo_val('c_name')
+
     def get_owner(self) -> GDO_User:
         return self.gdo_value('c_owner')
 

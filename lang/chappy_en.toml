@@ -29,11 +29,12 @@ msg_chappy_reset = "A new chappy adventure has been started with genome number %
 #########
 mt_chappy_stats = "Chappy Stats"
 md_chappy_stats = "Chappy Stats for a single chappy. Your own or another."
-chappy_stats_0 = "%s belongs to %s, is %s %s %s %s with an age of %s." # Name User a small caucasian male race age.
+chapp_stats = "Chappy Stats: %s"
+chappy_stats_0 = "%s belongs to %s, is %s %s %s %s." # Name User a small caucasian male race.
 chappy_stats_1 = "It is %s old, has %s %scm long headhair, %s eyes and %s %s wings." # 5y 13cm haircolor, eyecolor, little wingcolor
 chappy_stats_2 = "It looks %s, %s, %s and %s." # quickness, strength, charisma and intelligence.
 chappy_stats_3 = "Attributes: %s."
-chappy_stats_4 = "PIC: %s"
+chappy_stats_4 = "Picture: %s."
 
 
 ################
@@ -98,7 +99,7 @@ chappy_latin = 'latin'
 
 
 ##########
-# Genome #
+# Avatar #
 ##########
 chappy_avatar_genome0 = "A Chappy is like a bird pokemon. All percent values are in respect to the birds breed. Do all drawings in the style of pokemon."
 chappy_avatar_genome1 = "The Chappy named '%s' is %s %s." # a tiny hawk.

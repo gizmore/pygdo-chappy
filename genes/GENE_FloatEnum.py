@@ -30,9 +30,17 @@ class GENE_FloatEnum(WithProxy, GDT_Float, GENE):
     def gdo_column_define(self) -> str:
         return GDT_Float.gdo_column_define(self)
 
+    def enum_proxy(self) -> GDT_Enum:
+        return self._proxy
+
     ###########
     # Compute #
     ###########
     def gdo_chappy_start(self):
         self.get_chappy().set_val(self.get_name(), Random.mrandf(0, 0.5))
+
+    def gdo_chappy_genome_text(self):
+        return self.enum_proxy().get_value()
+
+
 

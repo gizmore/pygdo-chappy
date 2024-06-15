@@ -21,7 +21,14 @@ class stats(Method):
 
     def gdo_execute(self):
         chappy = self.get_chappy()
-        text = t('chappy_stats', [self.get_attribute_text(chappy), self.get_genome_text(chappy)])
+        # chappy_stats_0 = "%s belongs to %s, is %s %s %s %s." # Name User a small caucasian male race.
+        stats_txt = t('chappy_stats_0', [
+            chappy.get_chappy_name(),
+            chappy.get_owner().get_displayname(),
+            chappy.column('gene_size').gdo_chappy_genome_text(),
+        ])
+        #self.get_attribute_text(chappy), self.get_genome_text(chappy)
+        text = t('chappy_stats', [stats_txt])
         return GDT_String('stats').val(text)
 
     def get_attribute_text(self, chappy: GDO_Chappy) -> str:

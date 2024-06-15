@@ -6,7 +6,6 @@ from gdo.core.GDT_Enum import GDT_Enum
 class GENE_Ethnic(GDT_Enum, GENE):
     _level: int
 
-
     def __init__(self, name: str):
         super().__init__(name)
         self._level = int(name[8:9])
