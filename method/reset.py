@@ -3,6 +3,9 @@ from gdo.base.Method import Method
 
 class reset(Method):
 
+    def gdo_trigger(self) -> str:
+        return 'cpr'
+
     def gdo_execute(self):
         user = self._env_user
         genome_number = user.get_setting_val('chappy_genome')

@@ -9,16 +9,23 @@ class GENE(WithChappy, GDT_Field):
     def __init__(self, name):
         super().__init__(name)
 
-    def gdo_apply_genome(self):
+    ############
+    # Abstract #
+    ############
+    def gdo_chappy_start(self):
         Logger.error("STUB")
 
-    def gdo_genome_text(self) -> str:
-        return f"With {self.get_name()}\n"
+    def gdo_chappy_evolve(self):
+        Logger.error("STUB")
 
+    def gdo_chappy_apply(self):
+        Logger.error("STUB")
+
+    ##########
+    # Helper #
+    ##########
     def val_float_to_enum(self, val: float, enum: GDT_Enum):
         choices = enum.init_choices()
         choice = choices[int(val * len(choices))]
         enum.val(choice)
 
-    def gdo_evolve(self):
-        pass

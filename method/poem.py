@@ -5,6 +5,10 @@ from gdo.base.WithRateLimit import WithRateLimit
 
 
 class poem(Method):
+
+    def gdo_trigger(self) -> str:
+        return "poem"
+
     THE_POEM = [
         "The last expectation you were,",
         "the humble you have been.",
@@ -36,9 +40,6 @@ class poem(Method):
         "by the last wise men,",
         "by their last poem.",
     ]
-
-    def gdo_trigger(self) -> str:
-        return "poem"
 
     @WithRateLimit(max_calls=1, within=1800)
     async def gdo_execute(self):

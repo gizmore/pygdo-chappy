@@ -3,7 +3,7 @@ from __future__ import annotations
 from gdo.chappy.genes.GENE_FloatEnum import GENE_FloatEnum
 
 
-class GENE_Size(GENE_FloatEnum):
+class GENE_WingSize(GENE_FloatEnum):
 
     def gdo_choices(self) -> dict:
         return {

@@ -7,10 +7,20 @@ Your chappy will get it's genome inherited from it's parents, slightly altered.
 
 Components and their score.
 
- - Hair Color Hue (greenish(2), redish(1), blueish(0))
- - Hair Color saturation(hi(1), med(0), low(1))
- - Hair color lightness (hi(0), med(0.4), low(0.8))
- - Hair length (long(0.3), med(0.2), short(0.4), none(0.2))
+ - Hair Color: a color hue. The RGB value determines the fire, earth and water element power.
+ - Brightness: determines the man element power.
+ - Eye color: Same as hair color, but only 33% impact.
+ - Hair length: increase ice element power.
 
 Attributes
 
+## Chappy Elements
+
+There are 6 elements known to the Chappy game.
+
+- Fire - Red component from colors.
+- Earth - Green component from colors.
+- Water - Blue component from colors.
+- Ice - Hair length + water
+- Wind - Wing Size + earth
+- 

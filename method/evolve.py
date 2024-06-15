@@ -1,7 +1,7 @@
 from gdo.base.Method import Method
 
 
-class breed(Method):
+class evolve(Method):
 
     def gdo_trigger(self) -> str:
-        return 'cpb'
+        return 'cpe'

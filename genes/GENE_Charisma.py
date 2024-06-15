@@ -5,7 +5,8 @@ class GENE_Charisma(GENE_FloatEnum):
 
     def gdo_choices(self) -> dict:
         return {
-            'ugly': 'Ugly',
-            'handy': 'Handy',
-            'beautiful': 'Beautiful',
+            'ugly': 'ugly',
+            'handy': 'handy',
+            'beautiful': 'beautiful',
+            'very_beautiful': 'very beautiful',
         }

@@ -6,7 +6,7 @@ from gdo.base.Util import Random
 class start(Method):
 
     def gdo_trigger(self) -> str:
-        return 'cpy.start'
+        return 'chappy.start'
 
     def gdo_parameters(self) -> [GDT]:
         return []

@@ -1,5 +1,11 @@
 module_chappy = "Chappy"
 
+########
+# Poem #
+########
+mt_chappy_poem = "Gizmore's AI Poem"
+md_chappy_poem = "A little poem, gizmore has written, with and about AI, which took only 1 minute."
+
 #########
 # Start #
 #########
@@ -12,9 +18,39 @@ err_chappy_already_started = "You are already playing Chappy, genome number %s."
 # Reset #
 #########
 mt_chappy_reset = "Start Game"
-md_chappy_reset = "Create your personal Chappy. You need to $cpy.start first to get a genome number."
-err_chappy_game_not_started = "You have not issued $cpy.start yet. This will enable the game for your chat account and assign you a random genome number."
-msg_chappy_reset = "A new chappy adventure has been started with genome number %s. Now try $cpy.stats, $cpy.fight, $cpy.evolve or $cpy.breed - greetz giz!"
+md_chappy_reset = "Create your personal Chappy. You need to $cpy.start first to get a genome number. This will reset your chatgpt genomes and everything from the current chappy game."
+err_chappy_game_not_started = "You have not issued chappy.start yet. This will enable the game for your chat account and assign you a random genome number."
+msg_chappy_reset = "A new chappy adventure has been started with genome number %s. Now try $cps, $cpy.fight, $cpy.evolve or $cpy.breed - greetz giz!"
+
+#########
+# Stats #
+#########
+mt_chappy_stats = "Chappy Stats"
+md_chappy_stats = "Chappy Stats for a single chappy. Your own or another."
+chappy_stats_0 = "%s belongs to %s, is %s %s %s %s with an age of %s." # Name User a small caucasian male race age.
+chappy_stats_1 = "It is %s old, has %s %scm long headhair, %s eyes and %s %s wings." # 5y 13cm haircolor, eyecolor, little wingcolor
+chappy_stats_2 = "It looks %s, %s, %s and %s." # quickness, strength, charisma and intelligence.
+chappy_stats_3 = "Attributes: %s."
+chappy_stats_4 = "PIC: %s"
+
+##############
+# Attributes #
+##############
+chattr_age = "Age"
+chattr_attack = "Atk"
+chattr_charisma = "CH"
+chattr_defense = "Def"
+chattr_earth = "Earth"
+chattr_fire = "Fire"
+chattr_food = "Food"
+chattr_ice = "Ice"
+chattr_intelligence = "IN"
+chattr_joy = "Joy"
+chattr_life = "Lives"
+chattr_quickness = "QU"
+chattr_strength = "ST"
+chattr_water = "Water"
+
 
 #############
 # GENE_Race #
@@ -39,3 +75,24 @@ chappy_eagle = "Majestic birds of prey with powerful beaks and keen eyesight."
 chappy_hawk = "Birds of prey known for their sharp vision and hunting prowess."
 chappy_heron = "Long-legged wading birds found near water bodies, known for their patient hunting."
 chappy_peacock = "Colorful birds with extravagant plumage, known for their distinctive tail feathers."
+
+###############
+# GENE_Ethnic #
+###############
+chappy_african = 'african'
+chappy_asian = 'asian'
+chappy_caucasian = 'caucasian'
+chappy_latin = 'latin'
+
+
+##########
+# Genome #
+##########
+chappy_avatar_genome0 = "A Chappy is like a bird pokemon. All percent values are in respect to the birds breed. Do all drawings in the style of pokemon."
+chappy_avatar_genome1 = "The Chappy named '%s' is %s %s." # a tiny hawk.
+chappy_avatar_genome2a = "He is of %s ethnic and a nice bird." # caucassian
+chappy_avatar_genome2b = "He is a %s-%s bird and a nice bird." # asian-caucassian
+chappy_avatar_genome2c = "He is a %s-%s bird, with a tad of %s, and a nice bird." # asian-caucassian with a tad of african
+chappy_avatar_genome3 = "He is of %s size (%s% size for his breed) and looks %s, is %s and %s." # a small size (25%) strong, fast and witty.
+chappy_avatar_genome4 = "His feathers are %s with a base hue value of %s." # quite dark, 137.
+chappy_avatar_genome5 = "The hue value of the eyes is %s." # 137.

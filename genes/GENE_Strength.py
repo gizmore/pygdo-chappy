@@ -1,8 +1,14 @@
-from gdo.chappy.GENE import GENE
-from gdo.core.GDT_Float import GDT_Float
+from gdo.chappy.genes.GENE_FloatEnum import GENE_FloatEnum
 
 
-class GENE_Strength(GDT_Float, GENE):
+class GENE_Strength(GENE_FloatEnum):
 
-    def __init__(self, name: str):
-        super().__init__(name)
+    def gdo_choices(self) -> dict:
+        return {
+            'weak': 'weak',
+            'bit_weak': 'a bit weak',
+            'healthy': 'healthy',
+            'good_shape': 'good',
+            'strong': 'strong',
+            'mighty': 'mighty',
+        }
