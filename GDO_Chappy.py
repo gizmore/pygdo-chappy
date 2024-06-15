@@ -58,3 +58,21 @@ class GDO_Chappy(GDO):
 
     def make_active(self):
         return self
+
+    ##########
+    # Static #
+    ##########
+    @classmethod
+    def active_for_user(cls, user: GDO_User) -> 'GDO_Chappy':
+        return cls.table().get_by_vals({
+            'c_owner': user.get_id(),
+            'c_active': '1',
+        })
+
+    @classmethod
+    def all_for_user(cls, user: GDO_User) -> list['GDO_Chappy']:
+        return cls.table().select().where(f"c_owner={user.get_id()}").exec().fetch_all()
+
+    @classmethod
+    def random_except_for_user(cls, user: GDO_User) -> 'GDO_Chappy':
+        return cls.table().select().where(f"c_owner!={user.get_id()} AND c_active").limit(1).exec().fetch_object()
