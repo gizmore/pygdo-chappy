@@ -1,1 +1,41 @@
 module_chappy = "Chappy"
+
+#########
+# Start #
+#########
+mt_chappy_start = "Start Chappy"
+md_chappy_start = "Enable the chappy MMORPG for your account. You need $cpy.reset afterwards!"
+msg_chappy_started = "You are now playing Chappy! Genome Number %s. Type $cpy.reset to start an adventure.Now try $cpy.stats, $cpy.fight, $cpy.evolve or $cpy.breed. *BUT* You need $cpy.reset now to start a new game!"
+err_chappy_already_started = "You are already playing Chappy, genome number %s."
+
+#########
+# Reset #
+#########
+mt_chappy_reset = "Start Game"
+md_chappy_reset = "Create your personal Chappy. You need to $cpy.start first to get a genome number."
+err_chappy_game_not_started = "You have not issued $cpy.start yet. This will enable the game for your chat account and assign you a random genome number."
+msg_chappy_reset = "A new chappy adventure has been started with genome number %s. Now try $cpy.stats, $cpy.fight, $cpy.evolve or $cpy.breed - greetz giz!"
+
+#############
+# GENE_Race #
+#############
+chappy_hummingbird = "Known for their tiny size and rapid wing beats."
+chappy_sparrow = "Small, common songbirds found in urban and rural areas."
+chappy_robin = "Small songbirds with red breasts, often associated with the arrival of spring."
+chappy_toucan = "Tropical birds with brightly colored bills and large beaks."
+chappy_kingfisher = "Colorful birds known for diving into water to catch fish."
+chappy_blue_jay = "Vibrant blue birds known for their noisy calls and intelligence."
+chappy_woodpecker = "Birds with strong bills for pecking holes in trees to find insects."
+chappy_penguin = "Flightless birds found in cold climates, known for their waddling gait and swimming ability."
+chappy_parrot = "Colorful birds with the ability to mimic human speech and sounds."
+chappy_crow = "Intelligent birds often associated with mystery and symbolism."
+chappy_flamingo = "Tall, pink birds with long legs and necks, found in shallow waters."
+chappy_owl = "Nocturnal birds known for their silent flight and wisdom symbolism."
+chappy_dove = "Symbolic birds of peace with gentle cooing calls."
+chappy_seagull = "Coastal birds known for their scavenging behavior and loud calls."
+chappy_pelican = "Large birds with long bills and large throat pouches for catching fish."
+chappy_swan = "Graceful birds known for their elegance and typically found on lakes and ponds."
+chappy_eagle = "Majestic birds of prey with powerful beaks and keen eyesight."
+chappy_hawk = "Birds of prey known for their sharp vision and hunting prowess."
+chappy_heron = "Long-legged wading birds found near water bodies, known for their patient hunting."
+chappy_peacock = "Colorful birds with extravagant plumage, known for their distinctive tail feathers."
