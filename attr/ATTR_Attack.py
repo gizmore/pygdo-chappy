@@ -1,12 +1,8 @@
-from gdo.chappy.ATTR import ATTR
-from gdo.core.GDT_UInt import GDT_UInt
+from gdo.chappy.attr.ATTR_UInt import ATTR_UInt
 
 
-class ATTR_Attack(GDT_UInt, ATTR):
+class ATTR_Attack(ATTR_UInt):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.min(0)
-        self.max(65535)
-        self.bytes(2)
 

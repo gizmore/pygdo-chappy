@@ -21,6 +21,9 @@ class GENE_Color(GDT_UInt, GENE):
         rf, gf, bf = colorsys.hls_to_rgb(self.get_value() / 255, 0.5, 0.75)
         return round(rf * 255), round(gf * 255), round(bf * 255)
 
+    def get_hex(self):
+        return f"%02x%02x%02x" % self.get_rgb()
+
     def gdo_chappy_start(self):
         chappy = self.get_chappy()
         chappy.set_val(self.get_name(), Random.mrand(0, 255))
@@ -31,3 +34,9 @@ class GENE_Color(GDT_UInt, GENE):
         chappy.inc_attr('c_fire', r)
         chappy.inc_attr('c_earth', g)
         chappy.inc_attr('c_water', b)
+
+    def render_txt(self) -> str:
+        hex = self.get_hex()
+
+
+

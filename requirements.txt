@@ -1,0 +1,2 @@
+chroma
+git+https://github.com/gizmore/python-name-that-color.git

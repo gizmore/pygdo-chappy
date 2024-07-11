@@ -1,0 +1,11 @@
+# str, qui, int, cha
+[mouse]
+attributes = [10, 25, 15, 100]
+[bird]
+attributes = [ 5, 15, 30, 100]
+[cat]
+attributes = [15, 10, 25, 100]
+[dog]
+attributes = [20,  5, 25, 100]
+[elephant]
+attributes = [25,  0, 30, 100]

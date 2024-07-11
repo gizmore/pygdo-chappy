@@ -27,11 +27,16 @@ msg_chappy_reset = "A new chappy adventure has been started with genome number %
 #########
 # Stats #
 #########
+chappy_render_root = ""
+
 mt_chappy_stats = "Chappy Stats"
 md_chappy_stats = "Chappy Stats for a single chappy. Your own or another."
-chapp_stats = "Chappy Stats: %s"
-chappy_stats_0 = "%s belongs to %s, is %s %s %s %s." # Name User a small caucasian male race.
-chappy_stats_1 = "It is %s old, has %s %scm long headhair, %s eyes and %s %s wings." # 5y 13cm haircolor, eyecolor, little wingcolor
+chappy_stats = "Chappy Stats: %s"
+#chappy_stats_0 = "%s belongs to %s, and is a %s mixture of %is %s %s %s %s." # Name User a small caucasian male race.
+
+chappy_stats_0a = "%s belongs to %s, and is a %s level %s %s %s." # Name User a level 11 small male cat.
+chappy_stats_0b = "%s belongs to %s, is s %s %s mixture of %s(%s%%) and %s(%s%%)%s. It has level %s." # Name User a small caucasian male race.
+chappy_stats_1 = "It is %s years old, has %s skin, %s hair, which is %s cm long, and %s eyes." # 5y 13cm haircolor, eyecolor, little wingcolor
 chappy_stats_2 = "It looks %s, %s, %s and %s." # quickness, strength, charisma and intelligence.
 chappy_stats_3 = "Attributes: %s."
 chappy_stats_4 = "Picture: %s."

@@ -14,6 +14,8 @@ class GENE_FloatEnum(WithProxy, GDT_Float, GENE):
     def __init__(self, name: str):
         super().__init__(name)
         self.proxy(GDT_Enum(f"{name}").choices(self.gdo_choices()))
+        self.initial('0')
+        self.min(0).max(1)
 
     def val(self, val: str | list):
         if not val:
@@ -42,5 +44,10 @@ class GENE_FloatEnum(WithProxy, GDT_Float, GENE):
     def gdo_chappy_genome_text(self):
         return self.enum_proxy().get_value()
 
+    ##########
+    # Render #
+    ##########
+    def render_txt(self):
+        return self.enum_proxy().render_txt()
 
 

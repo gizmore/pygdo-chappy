@@ -35,12 +35,14 @@ class GDT_Chappy(GDT_ObjectSelect):
         self._random = random
         return self
 
-    def get_value(self):
-        value = super().get_value()
-        if value is None:
+    #######
+    # GDT #
+    #######
+    def to_value(self, val: str):
+        if val is None:
             user = GDO_User.current()
             if self._own:
                 return GDO_Chappy.active_for_user(user)
             if self._random:
                 return GDO_Chappy.random_except_for_user(user)
-        return value
+        return super().to_value(val)

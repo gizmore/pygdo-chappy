@@ -1,7 +1,6 @@
-from gdo.chappy.ATTR import ATTR
-from gdo.core.GDT_UInt import GDT_UInt
+from gdo.chappy.attr.ATTR_UInt import ATTR_UInt
 
 
-class ATTR_Water(GDT_UInt, ATTR):
+class ATTR_Water(ATTR_UInt):
     pass
 

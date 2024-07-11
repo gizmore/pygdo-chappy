@@ -1,5 +1,5 @@
+from gdo.base.Util import Random
 from gdo.chappy.GDO_Chappy import GDO_Chappy
-from gdo.chappy.GDT_ChappyGenome import GDT_ChappyGenome
 from gdo.chatgpt.module_chatgpt import module_chatgpt
 from gdo.core.GDO_User import GDO_User
 
@@ -19,7 +19,11 @@ class Factory:
             'c_active': '1' if active else '0',
         }
         chappy = GDO_Chappy.blank(data)
-        for key in chappy.GENES:
-            chappy.column(key).gdo_chappy_start()
-        chappy.insert().make_active()
+        genome = user.get_setting_value('chappy_genome')
+        with Random(int(genome)):
+            for key in chappy.GENES:
+                chappy.column(key).gdo_chappy_start()
+        chappy.insert()
+        if active:
+            chappy.make_active()
         return chappy

@@ -15,3 +15,6 @@ class GENE_Gender(GENE_FloatEnum):
 
     def gdo_chappy_start(self):
         self.get_chappy().set_val(self.get_name(), Random.mrandf(0, 1.0))
+
+    def render_txt(self):
+        return self.enum_proxy().render_txt()

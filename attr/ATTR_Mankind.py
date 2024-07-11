@@ -1,7 +1,6 @@
-from gdo.chappy.ATTR import ATTR
-from gdo.core.GDT_UInt import GDT_UInt
+from gdo.chappy.attr.ATTR_UInt import ATTR_UInt
 
 
-class ATTR_Mankind(GDT_UInt, ATTR):
+class ATTR_Mankind(ATTR_UInt):
     pass
 

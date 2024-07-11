@@ -21,6 +21,9 @@ class module_chappy(GDO_Module):
             'avatar',
             'blackjack',
             'chatgpt',
+            'login',
+            'payment_credits',
+            'register',
             'slapwarz',
         ]
 
