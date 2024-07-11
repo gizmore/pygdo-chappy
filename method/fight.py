@@ -22,11 +22,10 @@ class fight(Method):
         return self.param_value('target')
 
     def gdo_execute(self):
-        target = self.get_target()
-        if target is None:
+        defender = self.get_target()
+        if defender is None:
             return self.err('err_chappy_no_fight_target')
         attacker = module_chappy.instance().get_chappy(self._env_user)
-        defender = self.get_target()
-        outcome = GDO_ChappyFight.fight(attacker, defender, self.parameter('with'))
-        return outcome.render()
+        fight, outcome = GDO_ChappyFight.fight(attacker, defender, self.parameter('with'))
+        return fight
 

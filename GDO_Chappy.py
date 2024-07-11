@@ -93,7 +93,7 @@ class GDO_Chappy(GDO):
             # real
             ATTR_Level('c_level').not_null().initial('1'),
             ATTR_Age('c_birthdate'),
-            ATTR_Life('c_lives'),
+            ATTR_Life('c_lives').initial('100').min(0).max(100),
             ATTR_Food('c_food'),
             ATTR_Joy('c_joy'),
             # computed

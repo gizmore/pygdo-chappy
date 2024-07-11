@@ -65,6 +65,8 @@ class ChappyTest(unittest.TestCase):
         gizmore_chappy = self.start_chappy(cli_gizmore(), '612')
         self.assertNotEquals(peter_chappy, gizmore_chappy, 'Peter and gizmore have the same chappy.')
         out = cli_plug(cli_gizmore(), "$cpf --with fire Peter")
+        self.assertIn('fire', out, 'Attack does not work.')
+
 
 
 
