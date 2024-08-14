@@ -1,5 +1,6 @@
 from gdo.base.GDO import GDO
 from gdo.base.GDT import GDT
+from gdo.base.Render import Render, Mode
 from gdo.base.Trans import t
 from gdo.base.Util import Random
 from gdo.chappy.Combat import FightOutcome, Combat
@@ -106,7 +107,7 @@ class GDO_ChappyFight(GDO):
     # info_chappy_fight_won = "It wins and steals %s health."
     # info_chappy_fight_los = "It lost!"
 
-    def render_txt(self) -> str:
+    def render_textual(self, mode: Mode):
         a = self.get_attacker()
         ao = a.get_owner()
         d = self.get_defender()
@@ -117,15 +118,18 @@ class GDO_ChappyFight(GDO):
             do.render_name(),
             d.render_name(),
             self.get_element(),
-            self.get_attack_dice(),
+            Render.green(self.get_attack_dice(), mode) if self.has_won() else Render.red(self.get_attack_dice(), mode),
             self.get_attack(),
-            self.get_defense_dice(),
+            Render.green(self.get_defense_dice(), mode) if not self.has_won() else Render.red(self.get_defense_dice(), mode),
             self.get_defense(),
         ])
         if self.has_won():
             txt += " "
-            txt += t('info_chappy_fight_won', [self.get_lives()])
+            txt += t('info_chappy_fight_won', [Render.bold(self.get_lives(), mode)])
         else:
             txt += " "
             txt += t('info_chappy_fight_los')
         return txt
+
+    def render_txt(self) -> str:
+        return self.render_textual(Mode.TXT)

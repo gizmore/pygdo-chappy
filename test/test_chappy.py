@@ -68,11 +68,5 @@ class ChappyTest(unittest.TestCase):
         self.assertIn('fire', out, 'Attack does not work.')
 
 
-
-
-
-
-
-
 if __name__ == '__main__':
     unittest.main()

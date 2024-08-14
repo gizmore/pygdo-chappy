@@ -46,6 +46,7 @@ chappy_stats_4 = "Picture: %s."
 #########
 mt_chappy_fight = "Fight a Chappy"
 md_chappy_fight = "Fight another Chappy."
+err_chappy_no_fight_target = "There is no other Chappy to fight."
 info_chappy_fight = "%s's %s attacks %s's %s with %s: %s(%s) vs. %s(%s)."
 info_chappy_fight_won = "It wins and steals %s health."
 info_chappy_fight_los = "It lost!"
