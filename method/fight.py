@@ -43,9 +43,12 @@ class fight(Method):
     def broadcast_server(self, server: GDO_Server, gdt: GDT):
         mode = server.get_connector().get_render_mode()
         msg = gdt.render(mode)
+        old_channel = self._env_channel
         for channel in server._channels:
+            self.env_channel(channel)
             if self.is_enabled():
                 channel.send(msg)
+        self.env_channel(old_channel)
 
     def is_enabled(self):
         return not self.get_config_channel('disabled')
